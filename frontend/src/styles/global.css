@@ -30,6 +30,20 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .btn { border: 1px solid var(--border); background: #fff; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
 .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
 .btn.ghost { background: transparent; }
-.link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
+.link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; text-decoration: none; }
+a.link:hover { text-decoration: underline; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+.range-bar { align-items: flex-end; }
+.range-select { border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; background: #fff; font-size: 13px; }
+.stat-card--drill { cursor: pointer; text-align: left; transition: border-color .15s, box-shadow .15s; }
+.stat-card--drill:hover { border-color: var(--brand); }
+.stat-card--drill.is-active { border-color: var(--brand); box-shadow: 0 0 0 2px rgba(31, 111, 235, .15); }
+.stat-card--drill .stat-label { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.drill-hint { font-style: normal; font-size: 11px; color: var(--brand); white-space: nowrap; }
+.drill-panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+.drill-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.drill-head h3 { font-size: 15px; margin: 0; }
+.drill-tip { font-size: 12px; color: var(--muted); }
+.metric-on { color: var(--brand); font-weight: 600; }
+.drill-empty { padding: 12px 0 4px; margin: 0; }
