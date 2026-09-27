@@ -33,6 +33,6 @@ def health() -> dict[str, object]:
 
 
 @app.get("/api/overview")
-def overview() -> dict[str, object]:
-    """运营概览：把各业务模块的待处理量汇总成看板卡片。"""
-    return store.overview()
+def overview(range: str = "today") -> dict[str, object]:
+    """运营概览：按统计区间（today/7d/30d/all）汇总各模块积压，供看板下钻。"""
+    return store.overview(range)

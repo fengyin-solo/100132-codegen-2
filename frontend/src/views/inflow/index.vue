@@ -66,6 +66,7 @@
 import { onMounted, ref } from 'vue'
 
 import { request } from '@/api/client'
+import { useOverviewStore } from '@/stores/overview'
 
 type Row = Record<string, string | number | null>
 
@@ -105,6 +106,7 @@ async function runAction(action: string, row: Row) {
       throw new Error('进水监控动作未生效，请稍后重试')
     }
     await reload()
+    void overviewStore.refresh()
   } catch (error) {
     errorMessage.value = error instanceof Error ? error.message : '进水监控操作失败'
   }
@@ -125,6 +127,8 @@ async function reload() {
     errorMessage.value = error instanceof Error ? error.message : '进水监控列表读取失败'
   }
 }
+
+const overviewStore = useOverviewStore()
 
 onMounted(reload)
 </script>
